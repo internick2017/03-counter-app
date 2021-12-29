@@ -1,9 +1,8 @@
-// SFC (antes)
-// FC (ahora)
+import PropTypes from 'prop-types';
 
 // import { Fragment } from "react";
 
-const PrimeraApp = ({ saludo = 'hola mundo'}) => {
+const PrimeraApp = ({ saludo, subtitulo }) => {
 
 
 
@@ -22,14 +21,19 @@ const PrimeraApp = ({ saludo = 'hola mundo'}) => {
         <>
             <h1>{saludo}</h1>
             {/* <pre >{JSON.stringify(saludo, null,3)}</pre> */}
-            <p>Mi primera aplicacion react</p>
+            <p>{subtitulo}</p>
         </>
         // </Fragment>
     );
 
-
 }
 
+PrimeraApp.propTypes = {
+    saludo: PropTypes.string.isRequired
+}
 
+PrimeraApp.defaultProps = {
+    subtitulo: 'soy un subtitulo'
+}
 
 export default PrimeraApp;
